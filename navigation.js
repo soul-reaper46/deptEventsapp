@@ -1,0 +1,39 @@
+import React, { Component } from 'react';
+import { createAppContainer, createSwitchNavigator, } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import App from './App';
+import {createDrawerNavigator} from 'react-navigation-drawer';
+import { createBottomTabNavigator, createTabNavigator } from 'react-navigation-tabs';
+
+import adm_home from './adm_home';
+
+import Icon1 from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icons from 'react-native-vector-icons/Fontisto';
+
+
+
+
+
+const mySwitch = createSwitchNavigator({
+    Home : App,
+    adm_home : adm_home,
+   
+    
+
+   
+});
+
+
+
+
+const MyNavigator = createAppContainer(mySwitch);
+
+
+export default class navigation extends Component{
+    render(){
+        return(<MyNavigator/>)
+
+    
+    }
+}
