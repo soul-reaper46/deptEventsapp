@@ -79,9 +79,12 @@ import com.android.build.OutputFile
 
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
+    iconFontnames:['MaterialIcons.ttf', 'EvilIcons.ttf','MaterialCommunityIcons.ttf','Feather.ttf', 'FontAwesome.ttf', 'Zocial.ttf'  ]
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -197,6 +200,7 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
     implementation project(':react-native-vector-icons')  
     implementation project(':react-native-gesture-handler')
+
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

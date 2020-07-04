@@ -3,14 +3,13 @@ import { Text, View, StyleSheet,
   StatusBar,
   TextInput,
   ScrollView,
-  TouchableOpacity, } from 'react-native';
+  TouchableOpacity,} from 'react-native';
 
-  import Feather from       'react-native-vector-icons/Feather';
-  import Zocial1 from       'react-native-vector-icons/Zocial';
-  import FontAwesome from   'react-native-vector-icons/FontAwesome';
-  
-  import firebase from 'firebase';
-  require('firebase/auth')
+import Feather from 'react-native-vector-icons/Feather';
+import Zocial1 from 'react-native-vector-icons/Zocial';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import firebase from 'firebase';
+require('firebase/auth')
 
 export default class App extends React.Component {
 
@@ -43,23 +42,22 @@ export default class App extends React.Component {
   handleLogin = () => {
     const { email, password } = this.state
 
-    if(email){
-      if(password){
+    if(email) {
+      if(password) {
 
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => this.props.navigation.navigate('adm_home'))
-      .catch(error => this.setState({ errorMessage: error.message }))
-
-
-    }else{
-      alert('Please insert Password');
-    }
-  }else{
+        firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => this.props.navigation.navigate('adm_home'))
+        .catch(error => this.setState({ errorMessage: error.message }))
+      }
+      else {
+        alert('Please insert Password');
+      }
+    } 
+    else {
       alert('Please insert Email');
     }
-
   }
 
    render() {
